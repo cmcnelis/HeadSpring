@@ -14,7 +14,6 @@ public class MeaningOfLife implements ICondition{
 
     @Override
     public String eval(int input) {
-
         if(input % 42 == 0){
             return  MEANING;
         }

@@ -43,10 +43,20 @@ public class FizzBuzzAppTest {
 
     @Test
     public void test2(){
-        fizzBuzzApp = new FizzBuzzApp(new Range(0,10));
+        fizzBuzzApp = new FizzBuzzApp(new Range(0,30));
         List<String> result = runIt(fizzBuzzApp);
 
-        Assert.assertEquals(BUZZ, result.get(result.size()-1));
+        Assert.assertEquals(FIZZ_BUZZ, result.get(result.size()-1));
+
+        for(int i = 0 ; i < result.size(); i++){
+            if(i%15 == 0){
+                Assert.assertEquals(FIZZ_BUZZ, result.get(i));
+            }else if( i % 3 == 0){
+                Assert.assertEquals(FIZZ, result.get(i));
+            }else if(i % 5 == 0){
+                Assert.assertEquals(BUZZ, result.get(i));
+            }
+        }
 
     }
 
@@ -66,7 +76,16 @@ public class FizzBuzzAppTest {
         List<String> result = runIt(fizzBuzzApp);
 
         Assert.assertEquals(MEANING, result.get(0));
+        // pick some random interval
+        Assert.assertEquals(new Integer(63), new Integer(result.get(21)));
         Assert.assertEquals(MEANING, result.get(result.size()-1));
+
+        // peel off the ends
+        result.remove(0);
+        result.remove(result.size()-1);
+
+        // no more Meaning
+        Assert.assertFalse(result.contains(MEANING));
     }
 
     @Test
