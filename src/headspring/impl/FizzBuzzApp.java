@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * A simple tool for outputting messages and numbers to the console
+ * based on certain conditions.
  * @author cmcnelis
  *
  */
@@ -15,7 +17,7 @@ public class FizzBuzzApp {
     private Range range;
 
     public FizzBuzzApp(Range range){
-         this(range, new DivisableBy3_5_15());
+         this(range, new DivisibleBy3_5_15());
     }
 
     public FizzBuzzApp(Range range, ICondition... conditions){
@@ -24,7 +26,7 @@ public class FizzBuzzApp {
     }
 
     public FizzBuzzApp(){
-        this(new Range(1,100), new DivisableBy3_5_15());
+        this(new Range(1,100), new DivisibleBy3_5_15());
     }
 
     public void fizz(){
