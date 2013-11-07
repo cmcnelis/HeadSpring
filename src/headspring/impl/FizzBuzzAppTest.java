@@ -99,6 +99,18 @@ public class FizzBuzzAppTest {
 
     }
 
+    @Test
+    public void testOdd(){
+        fizzBuzzApp = new FizzBuzzApp(new Range(0,25), new OddBuzz());
+        List<String> result = runIt(fizzBuzzApp);
+
+        for(int i = 0 ; i < result.size(); i++){
+            if( !(i % 2 == 0)){
+                Assert.assertEquals(OddBuzz.ODD, result.get(i));
+            }
+        }
+    }
+
 
     private List<String> runIt(FizzBuzzApp fizzBuzzApp){
         return fizzBuzzApp._fizz();
