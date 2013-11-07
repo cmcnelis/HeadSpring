@@ -60,6 +60,11 @@ public class FizzBuzzApp {
         _fizz();
     }
 
+    /**
+     * Runs the main logic for the app. Returns a recording of the
+     * output to the console for testing purposes.
+     * @return      Recording of the run for testing.
+     */
     protected List<String> _fizz(){
         List<String> recorder = new ArrayList<String>();
         StringBuffer buffer = new StringBuffer();
