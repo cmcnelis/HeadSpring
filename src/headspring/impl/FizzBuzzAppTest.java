@@ -10,6 +10,7 @@ import java.util.List;
 import static headspring.impl.Divisible_3_5_15_WOO_HOO.*;
 import static headspring.impl.DivisibleBy3_5_15.*;
 import static headspring.impl.MeaningOfLife.*;
+import static headspring.impl.EvenBuzz.*;
 
 /**
  * @author cmcnelis
@@ -67,6 +68,18 @@ public class FizzBuzzAppTest {
         Assert.assertEquals(MEANING, result.get(0));
         Assert.assertEquals(MEANING, result.get(result.size()-1));
     }
+
+    @Test
+    public void testEvenYo(){
+        fizzBuzzApp = new FizzBuzzApp(new Range(0,30), new EvenBuzz());
+        List<String> result = runIt(fizzBuzzApp);
+
+        for(int i = 0 ; i < result.size(); i+=2){
+            Assert.assertEquals(EVEN_YO, result.get(i));
+        }
+
+    }
+
 
     private List<String> runIt(FizzBuzzApp fizzBuzzApp){
         return fizzBuzzApp._fizz();

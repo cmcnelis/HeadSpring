@@ -14,5 +14,8 @@ public class FizzBuzz {
 
         FizzBuzzApp fizz2 = new FizzBuzzApp(new Range(10,10));
         fizz2.fizz();
+
+        FizzBuzzApp fizz3 = new FizzBuzzApp();
+        fizz3.fizz(1,20);
     }
 }
